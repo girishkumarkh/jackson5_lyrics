@@ -1,5 +1,5 @@
 import re
-from collections import Counter, OrderedDict
+from collections import Counter
 from django.shortcuts import render, render_to_response, RequestContext
 from django.http import HttpResponse
 
@@ -103,17 +103,6 @@ def homepage(request):
 	print Counter(lower_words)
 	top5words = list(Counter(lower_words).most_common(5))
 	low5words = list(Counter(lower_words).most_common()[:-5-1:-1])
-
-	# agg_words = dict(Counter(lower_words))
-
-	# for key in sorted(agg_words.iterkeys()):
-		# print "%s: %s" % (key, agg_words[key])
-
-	# print agg_words
-
-	# len_agg_words = len(agg_words)
-	# top5words = agg_words[0:5]
-	# low5words = agg_words[len_agg_words-5:len_agg_words]
 
 	print top5words
 	print low5words
